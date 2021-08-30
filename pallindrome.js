@@ -29,6 +29,7 @@ var Stack = function(){
 
     //add a value to this account
     this.push = function(value){
+    //key-value pair is used to access the object but when you want to access the key that changes frequently then we can access as this.storage[this.count]
         this.storage[this.count] = value
         this.count++
     }
