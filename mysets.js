@@ -1,6 +1,6 @@
 function mySets(){
     //collection is an array
-    let collection = ['ramesh', 'jack', 'sparrow']
+    let collection = []
     //this function will check for the presence of the element and return true or false
     this.has = function(element){
         return collection.indexOf(element) !== -1
@@ -66,7 +66,7 @@ function mySets(){
         })
         return intersectionSet
     }
-
+//this method is mostly used to get the element which are different from each other
     this.different = function(otherSet){
         differentSet = new mySets()
         firstSet = this.values()
@@ -78,11 +78,26 @@ function mySets(){
         })
         return differentSet
     }
+    //this will give you the subset of two set
+    this.subset = function(otherSet){
+        let firstSet = this.values()
+        return firstSet.every(function(value){
+            return otherSet.has(value)
+        })
+    }
 
 } 
-let raj = new mySets
 
-raj.union(['hello'])
+var setA = new mySets();
+var setB = new mySets();
+
+setA.add('a')
+setB.add('a')
+setA.add('b')
+setB.add('c')
+
+console.log(setA.subset(setB))
+
 
 
 
