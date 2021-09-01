@@ -60,6 +60,9 @@ function priority(){
     }
     this.dequeue = function(){
         return collection.shift()
-        
+
+    }
+    this.isEmpty = function(){
+        return collection.length === 0
     }
 }
